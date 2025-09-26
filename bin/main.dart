@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'tugas_kalkulator_2327240141.dart';
+import 'kalkulator.dart';
 
 void main(){
   var kalkulator = Kalkulator();
