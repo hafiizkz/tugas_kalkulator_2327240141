@@ -1,61 +1,55 @@
 import 'dart:io';
-import 'kalkulator.dart';
+import 'tugas_kalkulator_2327240141.dart';
 
-void main() {
+void main(){
   var kalkulator = Kalkulator();
-  bool ulang = true;
-
-  while (ulang) {
+  bool u = true;
+  while (u){
     try {
-      // Input bilangan pertama
-      stdout.write("Masukkan bilangan pertama: ");
+      stdout.write("Silahkan masukkan bilangan ke 1: ");
       double bil1 = double.parse(stdin.readLineSync()!);
 
-      // Input bilangan kedua
-      stdout.write("Masukkan bilangan kedua: ");
+      stdout.write("Silahkan masukkan bilangan ke 2: ");
       double bil2 = double.parse(stdin.readLineSync()!);
 
-      // Pilihan menu
       print("\nPilih operasi:");
       print("[1] Tambah");
       print("[2] Kurang");
       print("[3] Kali");
       print("[4] Bagi");
 
-      stdout.write("Masukkan pilihan (1-4): ");
+      stdout.write("Masukkan pilihan (1 - 4): ");
       String? pilihan = stdin.readLineSync();
 
       double? hasil;
 
-      if (pilihan == '1') {
+      if (pilihan == '1'){
         hasil = kalkulator.tambah(bil1, bil2);
-        print("Hasil: $hasil\n");
-      } else if (pilihan == '2') {
+        print("Hasil tambah adalah : $hasil\n");
+      }else if (pilihan == '2'){
         hasil = kalkulator.kurang(bil1, bil2);
-        print("Hasil: $hasil\n");
-      } else if (pilihan == '3') {
+        print("Hasil kurang adalah : $hasil\n");
+      }else if (pilihan == "3"){
         hasil = kalkulator.kali(bil1, bil2);
-        print("Hasil: $hasil\n");
-      } else if (pilihan == '4') {
+        print("Hasil kali adalah : $hasil\n");
+      }else if (pilihan == "4"){
         hasil = kalkulator.bagi(bil1, bil2);
-        print("Hasil: $hasil\n");
-      } else {
-        print("Pilihan tidak valid!\n");
-        continue; // balik ke awal loop
+        print("Hasil bagi adalah : $hasil\n");
+      }else {
+        print("Pilihan anda tidak sesuai \n");
+        continue;
       }
-
-    } catch (e) {
-      print("Input tidak valid. Silakan masukkan angka yang benar.\n");
+    } catch(e){
+      print("Input yang anda masukkan tidak sesuai, Silahkan masukkan angka yang benar \n");
       continue;
     }
 
-    // Tanya apakah ingin mengulang
-    stdout.write("Apakah ingin menghitung lagi? (Y/T): ");
+    stdout.write("Apakah anda ingin menggunakan kalkulator lagi? (Y/T): ");
     String? jawaban = stdin.readLineSync();
 
-    if (jawaban == null || jawaban.toUpperCase() == "T") {
-      ulang = false;
-      print("Terima kasih telah menggunakan kalkulator.");
+    if(jawaban == null || jawaban.toUpperCase()=="T"){
+      u = false;
+      print("Terima kasih telah menggunakan kalkulator");
     }
   }
 }
